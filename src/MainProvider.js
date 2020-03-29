@@ -1,10 +1,13 @@
 import React from "react";
 import { OwnerProvider } from "./owner/OwnerProvider";
+import { DogProvider } from "./dog/DogProvider";
 
 export default props => {
   return (
     <>
-      <OwnerProvider>{props.children}</OwnerProvider>
+      <DogProvider>
+        <OwnerProvider>{props.children}</OwnerProvider>
+      </DogProvider>
     </>
   );
 };

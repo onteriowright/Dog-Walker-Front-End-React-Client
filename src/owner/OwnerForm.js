@@ -128,7 +128,7 @@ export default props => {
         }}
         className="btn btn-primary"
       >
-        {editMode ? "Save Updates" : "Add New Owner"}
+        {editMode ? "Save Updates" : "Save New Owner"}
       </button>
       <button onClick={() => props.history.push("/owners")}>Previous</button>
     </form>

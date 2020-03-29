@@ -1,14 +1,22 @@
 .navbar {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: left;
+  justify-content: space-evenly;
+  background-color: gray;
+  height: 50px;
+  margin: 0;
 }
 
 .navbar__item {
   flex-basis: 20%;
   list-style-type: none;
+  background-color: lightblue;
+  border-radius: 50%;
+  text-align: center;
 }
 
 .navbar__link {
   text-decoration: none;
+  position: relative;
+  top: 15px;
 }

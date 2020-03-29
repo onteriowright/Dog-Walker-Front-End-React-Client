@@ -1,0 +1,56 @@
+.walkerList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.walkerCard {
+  margin: 10px;
+  border: 1px solid;
+  min-width: 15%;
+}
+
+.walkerInfo {
+  text-align: center;
+  margin: 10px;
+}
+
+.walkerBtn {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+}
+
+.walkerForm-- {
+  display: flex;
+  justify-content: center;
+}
+
+.walkerForm {
+  margin-top: 80px;
+}
+
+.walkerFormSubmitBtn {
+  margin-top: 15px;
+}
+
+.walkerFieldSet {
+  margin: 25px;
+}
+
+.walkerForm__title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.walkerTitleAndBtn {
+  text-align: center;
+}
+
+.walkerTitle {
+  font-size: 25px;
+}
+
+.form-group {
+  margin: 10px;
+}

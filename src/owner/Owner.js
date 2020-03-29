@@ -6,12 +6,18 @@ export default ({ owner, props }) => {
 
   return (
     <>
-      <div>Name: {owner.name}</div>
-      <div>Address: {owner.address}</div>
-      <div>City: {owner.neighborhood.name}</div>
-      <div>Phone: {owner.phone}</div>
-      <button onClick={() => props.history.push(`/owners/edit/${owner.id}`)}>Update</button>
-      <button onClick={() => deleteOwner(owner).then(() => props.history.push("/owners"))}>Delete Owner</button>
+      <section className="ownerCard">
+        <div className="ownerInfo">Name: {owner.name}</div>
+        <div className="ownerInfo">Address: {owner.address}</div>
+        <div className="ownerInfo">City: {owner.neighborhood.name}</div>
+        <div className="ownerInfo">Phone: {owner.phone}</div>
+        <button className="ownerBtn" onClick={() => props.history.push(`/owners/edit/${owner.id}`)}>
+          Edit
+        </button>
+        <button className="ownerBtn" onClick={() => deleteOwner(owner).then(() => props.history.push("/owners"))}>
+          Delete
+        </button>
+      </section>
     </>
   );
 };

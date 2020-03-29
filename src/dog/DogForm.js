@@ -55,82 +55,86 @@ export default props => {
   };
 
   return (
-    <form className="dogForm">
-      <h2 className="dogForm__title">{editMode ? "Update Dog" : "Add New Dog"}</h2>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="name">Name: </label>
-          <input
-            type="text"
-            name="name"
-            ref={dogName}
-            required
-            autoFocus
-            className="form-control"
-            proptype="varchar"
-            placeholder="Name"
-            defaultValue={dog.name}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="address">Breed: </label>
-          <input
-            type="text"
-            name="breed"
-            ref={breed}
-            required
-            className="form-control"
-            proptype="varchar"
-            placeholder="Breed"
-            defaultValue={dog.breed}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="ownerId">Owner Id: </label>
-          <input
-            name="ownerId"
-            ref={ownerId}
-            required
-            className="form-control"
-            proptype="int"
-            placeholder="Owner Id"
-            defaultValue={dog.ownerId}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="phone">Notes: </label>
-          <textarea
-            name="notes"
-            ref={notes}
-            required
-            className="form-control"
-            proptype="varchar"
-            placeholder="Notes"
-            defaultValue={dog.notes}
-            onChange={handleControlledInputChange}
-          ></textarea>
-        </div>
-      </fieldset>
-      <button
-        type="submit"
-        onClick={e => {
-          e.preventDefault();
-          constructNewDog();
-        }}
-        className="btn btn-primary"
-      >
-        {editMode ? "Save Updates" : "Save New Dog"}
-      </button>
-      <button onClick={() => props.history.push("/dogs")}>Previous</button>
-    </form>
+    <>
+      <section className="dogForm--">
+        <form className="dogForm">
+          <h2 className="dogForm__title">{editMode ? "Update Dog" : "Add New Dog"}</h2>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="name">Name: </label>
+              <input
+                type="text"
+                name="name"
+                ref={dogName}
+                required
+                autoFocus
+                className="form-control"
+                proptype="varchar"
+                placeholder="Name"
+                defaultValue={dog.name}
+                onChange={handleControlledInputChange}
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="address">Breed: </label>
+              <input
+                type="text"
+                name="breed"
+                ref={breed}
+                required
+                className="form-control"
+                proptype="varchar"
+                placeholder="Breed"
+                defaultValue={dog.breed}
+                onChange={handleControlledInputChange}
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="ownerId">Owner Id: </label>
+              <input
+                name="ownerId"
+                ref={ownerId}
+                required
+                className="form-control"
+                proptype="int"
+                placeholder="Owner Id"
+                defaultValue={dog.ownerId}
+                onChange={handleControlledInputChange}
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="phone">Notes: </label>
+              <textarea
+                name="notes"
+                ref={notes}
+                required
+                className="form-control"
+                proptype="varchar"
+                placeholder="Notes"
+                defaultValue={dog.notes}
+                onChange={handleControlledInputChange}
+              ></textarea>
+            </div>
+          </fieldset>
+          <button
+            type="submit"
+            onClick={e => {
+              e.preventDefault();
+              constructNewDog();
+            }}
+            className="btn btn-primary"
+          >
+            {editMode ? "Save Updates" : "Save New Dog"}
+          </button>
+          <button onClick={() => props.history.push("/dogs")}>Previous</button>
+        </form>
+      </section>
+    </>
   );
 };

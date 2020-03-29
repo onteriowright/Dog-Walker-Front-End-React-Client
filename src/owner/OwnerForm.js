@@ -55,82 +55,86 @@ export default props => {
   };
 
   return (
-    <form className="ownerForm">
-      <h2 className="ownerForm__title">{editMode ? "Update Owner" : "Add New Owner"}</h2>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="name">Name: </label>
-          <input
-            type="text"
-            name="name"
-            ref={ownerName}
-            required
-            autoFocus
-            className="form-control"
-            proptype="varchar"
-            placeholder="Name"
-            defaultValue={owner.name}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="address">Address: </label>
-          <input
-            type="text"
-            name="address"
-            ref={address}
-            required
-            className="form-control"
-            proptype="varchar"
-            placeholder="Address"
-            defaultValue={owner.address}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="neighborhoodId">Neighborhood Id: </label>
-          <input
-            name="neighborhoodId"
-            ref={neighborhoodId}
-            required
-            className="form-control"
-            proptype="varchar"
-            placeholder="Neighborhood Id"
-            defaultValue={owner.neighborhoodId}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="phone">Phone: </label>
-          <input
-            name="phone"
-            ref={phone}
-            required
-            className="form-control"
-            proptype="varchar"
-            placeholder="Phone"
-            defaultValue={owner.phone}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-      <button
-        type="submit"
-        onClick={e => {
-          e.preventDefault();
-          constructNewOwner();
-        }}
-        className="btn btn-primary"
-      >
-        {editMode ? "Save Updates" : "Save New Owner"}
-      </button>
-      <button onClick={() => props.history.push("/owners")}>Previous</button>
-    </form>
+    <>
+      <section className="ownerForm--">
+        <form className="ownerForm">
+          <h2 className="ownerForm__title">{editMode ? "Update Owner" : "Add New Owner"}</h2>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="name">Name: </label>
+              <input
+                type="text"
+                name="name"
+                ref={ownerName}
+                required
+                autoFocus
+                className="form-control"
+                proptype="varchar"
+                placeholder="Name"
+                defaultValue={owner.name}
+                onChange={handleControlledInputChange}
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="address">Address: </label>
+              <input
+                type="text"
+                name="address"
+                ref={address}
+                required
+                className="form-control"
+                proptype="varchar"
+                placeholder="Address"
+                defaultValue={owner.address}
+                onChange={handleControlledInputChange}
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="neighborhoodId">Neighborhood Id: </label>
+              <input
+                name="neighborhoodId"
+                ref={neighborhoodId}
+                required
+                className="form-control"
+                proptype="varchar"
+                placeholder="Neighborhood Id"
+                defaultValue={owner.neighborhoodId}
+                onChange={handleControlledInputChange}
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="phone">Phone: </label>
+              <input
+                name="phone"
+                ref={phone}
+                required
+                className="form-control"
+                proptype="varchar"
+                placeholder="Phone"
+                defaultValue={owner.phone}
+                onChange={handleControlledInputChange}
+              />
+            </div>
+          </fieldset>
+          <button
+            type="submit"
+            onClick={e => {
+              e.preventDefault();
+              constructNewOwner();
+            }}
+            className="btn btn-primary"
+          >
+            {editMode ? "Save Updates" : "Save New Owner"}
+          </button>
+          <button onClick={() => props.history.push("/owners")}>Previous</button>
+        </form>
+      </section>
+    </>
   );
 };

@@ -1,0 +1,20 @@
+body,
+html {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.welcomePageTitle {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  font-size: 40px;
+}
+.welcomePageIntro {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  font-size: 18px;
+}

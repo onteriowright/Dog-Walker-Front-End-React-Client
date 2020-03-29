@@ -6,12 +6,14 @@ export default ({ dog, props }) => {
 
   return (
     <>
-      <div>Name: {dog.name}</div>
-      <div>Breed: {dog.breed}</div>
-      <div>Notes: {dog.notes}</div>
-      <div>Owner: {dog.owner.name}</div>
-      <button onClick={() => props.history.push(`/dogs/edit/${dog.id}`)}>Update</button>
-      <button onClick={() => deleteDog(dog).then(() => props.history.push("/dogs"))}>Delete Dog</button>
+      <section className="dogCard">
+        <div>Name: {dog.name}</div>
+        <div>Breed: {dog.breed}</div>
+        <div>Notes: {dog.notes}</div>
+        <div>Owner: {dog.owner.name}</div>
+        <button onClick={() => props.history.push(`/dogs/edit/${dog.id}`)}>Edit</button>
+        <button onClick={() => deleteDog(dog).then(() => props.history.push("/dogs"))}>Delete</button>
+      </section>
     </>
   );
 };

@@ -7,11 +7,13 @@ export default props => {
 
   return (
     <>
-      <h3>Add A New Dog</h3>
-      <button onClick={() => props.history.push("/dogs/create")}>Add Dog</button>
-      {dogs.map(dog => (
-        <Dog key={dog.id} props={props} dog={dog} />
-      ))}
+      <section className="dogList">
+        <h3>Add A New Dog</h3>
+        <button onClick={() => props.history.push("/dogs/create")}>Add Dog</button>
+        {dogs.map(dog => (
+          <Dog key={dog.id} props={props} dog={dog} />
+        ))}
+      </section>
     </>
   );
 };

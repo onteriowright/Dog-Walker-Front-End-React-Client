@@ -1,4 +1,7 @@
+@import "./owner/Owner.css";
 @import "./walker/Walker.css";
+@import "./dog/Dog.css";
+
 body,
 html {
   box-sizing: border-box;

@@ -1,0 +1,56 @@
+.ownerList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.ownerCard {
+  margin: 10px;
+  border: 1px solid;
+  min-width: 15%;
+}
+
+.ownerInfo {
+  text-align: center;
+  margin: 10px;
+}
+
+.ownerBtn {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+}
+
+.ownerForm-- {
+  display: flex;
+  justify-content: center;
+}
+
+.ownerForm {
+  margin-top: 80px;
+}
+
+.ownerFormSubmitBtn {
+  margin-top: 15px;
+}
+
+.ownerFieldSet {
+  margin: 25px;
+}
+
+.ownerForm__title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.ownerTitleAndBtn {
+  text-align: center;
+}
+
+.ownerTitle {
+  font-size: 25px;
+}
+
+.form-group {
+  margin: 10px;
+}

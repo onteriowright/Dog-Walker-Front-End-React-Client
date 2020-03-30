@@ -1,13 +1,16 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { DogContext } from "./DogProvider";
+import { OwnerContext } from "../owner/OwnerProvider";
 
 export default props => {
   const { addDog, dogs, updateDog } = useContext(DogContext);
+  const { owners } = useContext(OwnerContext);
+
   const [dog, setDog] = useState({});
 
   const dogName = useRef(null);
   const breed = useRef(null);
-  const ownerId = useRef(null);
+  const owner = useRef(null);
   const notes = useRef(null);
 
   const editMode = props.match.params.hasOwnProperty("dogId");
@@ -40,7 +43,7 @@ export default props => {
       updateDog({
         id: dog.id,
         name: dogName.current.value,
-        ownerId: parseInt(ownerId.current.value),
+        ownerId: parseInt(owner.current.value),
         breed: breed.current.value,
         notes: notes.current.value
       }).then(() => props.history.push("/dogs"));
@@ -94,17 +97,22 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="ownerId">Owner Id: </label>
-              <input
+              <label htmlFor="ownerId">Owner: </label>
+              <select
                 name="ownerId"
-                ref={ownerId}
-                required
+                ref={owner}
                 className="form-control"
                 proptype="int"
-                placeholder="Owner Id"
-                defaultValue={dog.ownerId}
+                value={owner.ownerId}
                 onChange={handleControlledInputChange}
-              />
+              >
+                <option value="0">Select a owner</option>
+                {owners.map(owner => (
+                  <option key={owner.id} value={owner.id}>
+                    {owner.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </fieldset>
           <fieldset>

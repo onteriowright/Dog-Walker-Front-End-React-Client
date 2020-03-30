@@ -1,13 +1,15 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { OwnerContext } from "./OwnerProvider";
+import { NeighborhoodContext } from "../neighborhood/NeighborhoodProvider";
 
 export default props => {
   const { addOwner, owners, updateOwner } = useContext(OwnerContext);
+  const { neighborhoods } = useContext(NeighborhoodContext);
   const [owner, setOwner] = useState({});
 
   const ownerName = useRef(null);
   const address = useRef(null);
-  const neighborhoodId = useRef(null);
+  const neighborhood = useRef(null);
   const phone = useRef(null);
 
   const editMode = props.match.params.hasOwnProperty("ownerId");
@@ -41,7 +43,7 @@ export default props => {
         id: owner.id,
         name: ownerName.current.value,
         address: address.current.value,
-        neighborhoodId: parseInt(neighborhoodId.current.value),
+        neighborhoodId: parseInt(neighborhood.current.value),
         phone: phone.current.value
       }).then(() => props.history.push("/owners"));
     } else {
@@ -94,17 +96,22 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="neighborhoodId">Neighborhood Id: </label>
-              <input
+              <label htmlFor="neighborhoodId">Neighborhood: </label>
+              <select
                 name="neighborhoodId"
-                ref={neighborhoodId}
-                required
+                ref={neighborhood}
                 className="form-control"
-                proptype="varchar"
-                placeholder="Neighborhood Id"
-                defaultValue={owner.neighborhoodId}
+                proptype="int"
+                value={neighborhood.ownerId}
                 onChange={handleControlledInputChange}
-              />
+              >
+                <option value="0">Select a neighborhood</option>
+                {neighborhoods.map(neighborhood => (
+                  <option key={neighborhood.id} value={neighborhood.id}>
+                    {neighborhood.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </fieldset>
           <fieldset>

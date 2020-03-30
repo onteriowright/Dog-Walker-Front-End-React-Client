@@ -7,6 +7,8 @@ import DogList from "./dog/DogList";
 import DogForm from "./dog/DogForm";
 import WalkerList from "./walker/WalkerList";
 import WalkerForm from "./walker/WalkerForm";
+import NeighborhoodList from "./neighborhood/NeighborhoodList";
+import NeighborhoodForm from "./neighborhood/NeighborhoodForm";
 import WelcomePageList from "./welcomePage/WelcomePageList";
 
 export default props => {
@@ -26,6 +28,14 @@ export default props => {
         <Route exact path="/walkers" render={props => <WalkerList {...props} />} />
         <Route exact path="/walkers/create" render={props => <WalkerForm {...props} />} />
         <Route exact path="/walkers/edit/:walkerId(\d+)" render={props => <WalkerForm {...props} />} />
+
+        <Route exact path="/neighborhoods" render={props => <NeighborhoodList {...props} />} />
+        <Route exact path="/neighborhoods/create" render={props => <NeighborhoodForm {...props} />} />
+        <Route
+          exact
+          path="/neighborhoods/edit/:neighborhoodId(\d+)"
+          render={props => <NeighborhoodForm {...props} />}
+        />
       </MainProvider>
     </>
   );

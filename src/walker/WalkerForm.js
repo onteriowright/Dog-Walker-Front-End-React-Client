@@ -1,12 +1,14 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { WalkerContext } from "./WalkerProvider";
+import { NeighborhoodContext } from "../neighborhood/NeighborhoodProvider";
 
 export default props => {
   const { addWalker, walkers, updateWalker } = useContext(WalkerContext);
+  const { neighborhoods } = useContext(NeighborhoodContext);
   const [walker, setWalker] = useState({});
 
   const walkerName = useRef(null);
-  const neighborhoodId = useRef(null);
+  const neighborhood = useRef(null);
 
   const editMode = props.match.params.hasOwnProperty("walkerId");
 
@@ -38,7 +40,7 @@ export default props => {
       updateWalker({
         id: walker.id,
         name: walkerName.current.value,
-        neighborhoodId: parseInt(neighborhoodId.current.value)
+        neighborhoodId: parseInt(neighborhood.current.value)
       }).then(() => props.history.push("/walkers"));
     } else {
       addWalker({
@@ -72,17 +74,22 @@ export default props => {
           </fieldset>
           <fieldset className="walkerFieldSet">
             <div className="form-group">
-              <label htmlFor="neighborhoodId">Neighborhood Id: </label>
-              <input
+              <label htmlFor="neighborhoodId">Neighborhood: </label>
+              <select
                 name="neighborhoodId"
-                ref={neighborhoodId}
-                required
+                ref={neighborhood}
                 className="form-control"
-                proptype="varchar"
-                placeholder="Neighborhood Id"
-                defaultValue={walker.neighborhoodId}
+                proptype="int"
+                value={neighborhood.ownerId}
                 onChange={handleControlledInputChange}
-              />
+              >
+                <option value="0">Select a neighborhood</option>
+                {neighborhoods.map(neighborhood => (
+                  <option key={neighborhood.id} value={neighborhood.id}>
+                    {neighborhood.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </fieldset>
           <section className="walkerBtn">

@@ -7,8 +7,8 @@ export default props => {
 
   return (
     <>
-      <section className="ownerTitleAndBtn">
-        <p className="ownerTitle">Add A New Dog</p>
+      <section className="dogTitleAndBtn">
+        <p className="dogTitle">Add New Dog</p>
         <button onClick={() => props.history.push("/dogs/create")}>Add Dog</button>
       </section>
       <section className="dogList">

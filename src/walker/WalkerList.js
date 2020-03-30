@@ -8,7 +8,7 @@ export default props => {
   return (
     <>
       <section className="walkerTitleAndBtn">
-        <p className="walkerTitle">Add A New Walker</p>
+        <p className="walkerTitle">Add New Walker</p>
         <button onClick={() => props.history.push("/walkers/create")}>Add Walker</button>
       </section>
       <section className="walkerList">

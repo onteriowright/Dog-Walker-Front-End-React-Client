@@ -11,7 +11,6 @@ export default ({ owner, props }) => {
         <div className="ownerInfo">Address: {owner.address}</div>
         <div className="ownerInfo">City: {owner.neighborhood.name}</div>
         <div className="ownerInfo">Phone: {owner.phone}</div>
-        {/* <div className="ownerInfo">Dogs: {owner.dogs[1]}</div> */}
 
         <section className="ownerBtn">
           <button className="ownerIndividualBtn" onClick={() => props.history.push(`/owners/edit/${owner.id}`)}>

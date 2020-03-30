@@ -1,6 +1,4 @@
-body,
-html {
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-}
+@import "./owner/Owner.css";
+@import "./walker/Walker.css";
+@import "./dog/Dog.css";
+@import "./neighborhood/Neighborhood.css";

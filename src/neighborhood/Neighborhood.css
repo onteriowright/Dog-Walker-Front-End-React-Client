@@ -1,0 +1,56 @@
+.neighborhoodList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.neighborhoodCard {
+  margin: 10px;
+  border: 1px solid;
+  min-width: 15%;
+}
+
+.neighborhoodInfo {
+  text-align: center;
+  margin: 10px;
+}
+
+.neighborhoodBtn {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+}
+
+.neighborhoodForm-- {
+  display: flex;
+  justify-content: center;
+}
+
+.neighborhoodForm {
+  margin-top: 80px;
+}
+
+.neighborhoodFormSubmitBtn {
+  margin-top: 15px;
+}
+
+.ownerFieldSet {
+  margin: 25px;
+}
+
+.neighborhoodForm__title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.neighborhoodTitleAndBtn {
+  text-align: center;
+}
+
+.neighborhoodTitle {
+  font-size: 25px;
+}
+
+.form-group {
+  margin: 10px;
+}

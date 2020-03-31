@@ -80,7 +80,7 @@ export default props => {
                 ref={neighborhood}
                 className="form-control"
                 proptype="int"
-                value={neighborhood.ownerId}
+                value={walker.neighborhoodId}
                 onChange={handleControlledInputChange}
               >
                 <option value="0">Select a neighborhood</option>

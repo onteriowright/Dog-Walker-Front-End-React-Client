@@ -102,8 +102,8 @@ export default props => {
                 name="ownerId"
                 ref={owner}
                 className="form-control"
-                proptype="int"
-                value={owner.ownerId}
+                proptype="varchar"
+                value={dog.ownerId}
                 onChange={handleControlledInputChange}
               >
                 <option value="0">Select a owner</option>

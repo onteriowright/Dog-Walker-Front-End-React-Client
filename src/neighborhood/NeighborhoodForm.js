@@ -49,10 +49,9 @@ export default props => {
     <>
       <section className="neighborhoodForm--">
         <form className="neighborhoodForm">
-          <p className="neighborhoodForm__title">{editMode ? "Update Neighborhood" : "Add Neighborhood"}</p>
+          <p className="neighborhoodForm__title">{editMode ? "Update City" : "Add City"}</p>
           <fieldset className="neighborhoodFieldSet">
             <div className="form-group">
-              <label htmlFor="name">Name: </label>
               <input
                 type="text"
                 name="name"
@@ -61,7 +60,7 @@ export default props => {
                 autoFocus
                 className="form-control"
                 proptype="varchar"
-                placeholder="Name"
+                placeholder="City Name"
                 defaultValue={neighborhood.name}
                 onChange={handleControlledInputChange}
               />
@@ -76,7 +75,7 @@ export default props => {
                 constructNewNeighborhood();
               }}
             >
-              {editMode ? "Save Updates" : "Save New Neighborhood"}
+              {editMode ? "Save Updates" : "Save New City"}
             </button>
             <button className="neighborhoodFormSubmitBtn" onClick={() => props.history.push("/neighborhoods")}>
               Previous

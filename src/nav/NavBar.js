@@ -27,7 +27,7 @@ export default props => {
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/neighborhoods">
-          Neighborhoods
+          City
         </Link>
       </li>
     </ul>

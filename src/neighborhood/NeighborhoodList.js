@@ -8,8 +8,8 @@ export default props => {
   return (
     <>
       <section className="neighborhoodTitleAndBtn">
-        <p className="neighborhoodTitle">Add New Neighborhood</p>
-        <button onClick={() => props.history.push("neighborhoods/create")}>Add Neighborhood</button>
+        <p className="neighborhoodTitle">Add New City</p>
+        <button onClick={() => props.history.push("neighborhoods/create")}>Add City</button>
       </section>
       <section className="neighborhoodList">
         {neighborhoods.map(neighborhood => (

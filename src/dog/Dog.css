@@ -11,7 +11,6 @@
 }
 
 .dogInfo {
-  text-align: center;
   margin: 10px;
 }
 
@@ -19,6 +18,10 @@
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 5px;
+}
+
+.dogFormBtn {
+  margin: 10px;
 }
 
 .dogForm-- {

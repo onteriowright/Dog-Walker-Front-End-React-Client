@@ -55,9 +55,8 @@ export default props => {
       <section className="walkerForm--">
         <form className="walkerForm">
           <p className="walkerForm__title">{editMode ? "Update Walker" : "Add New Walker"}</p>
-          <fieldset className="walkerFieldSet">
+          <fieldset>
             <div className="form-group">
-              <label htmlFor="name">Name: </label>
               <input
                 type="text"
                 name="name"
@@ -72,9 +71,8 @@ export default props => {
               />
             </div>
           </fieldset>
-          <fieldset className="walkerFieldSet">
+          <fieldset>
             <div className="form-group">
-              <label htmlFor="neighborhoodId">Neighborhood: </label>
               <select
                 name="neighborhoodId"
                 ref={neighborhood}
@@ -83,7 +81,7 @@ export default props => {
                 value={walker.neighborhoodId}
                 onChange={handleControlledInputChange}
               >
-                <option value="0">Select a neighborhood</option>
+                <option value="0">Select a city</option>
                 {neighborhoods.map(neighborhood => (
                   <option key={neighborhood.id} value={neighborhood.id}>
                     {neighborhood.name}
@@ -94,16 +92,16 @@ export default props => {
           </fieldset>
           <section className="walkerBtn">
             <button
-              className="btn btn-primary walkerFormSubmitBtn"
               type="submit"
               onClick={e => {
                 e.preventDefault();
                 constructNewWalker();
               }}
+              className="walkerFormBtn"
             >
               {editMode ? "Save Updates" : "Save New Walker"}
             </button>
-            <button className="walkerFormSubmitBtn" onClick={() => props.history.push("/walkers")}>
+            <button className="walkerFormBtn" onClick={() => props.history.push("/walkers")}>
               Previous
             </button>
           </section>

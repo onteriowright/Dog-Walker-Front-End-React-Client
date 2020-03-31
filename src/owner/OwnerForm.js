@@ -63,7 +63,6 @@ export default props => {
           <h2 className="ownerForm__title">{editMode ? "Update Owner" : "Add New Owner"}</h2>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="name">Name: </label>
               <input
                 type="text"
                 name="name"
@@ -80,7 +79,6 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="address">Address: </label>
               <input
                 type="text"
                 name="address"
@@ -96,7 +94,6 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="neighborhoodId">Neighborhood: </label>
               <select
                 name="neighborhoodId"
                 ref={neighborhood}
@@ -105,7 +102,7 @@ export default props => {
                 value={owner.neighborhoodId}
                 onChange={handleControlledInputChange}
               >
-                <option value="0">Select a neighborhood</option>
+                <option value="0">Select a city</option>
                 {neighborhoods.map(neighborhood => (
                   <option key={neighborhood.id} value={neighborhood.id}>
                     {neighborhood.name}
@@ -116,7 +113,6 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="phone">Phone: </label>
               <input
                 name="phone"
                 ref={phone}
@@ -129,17 +125,21 @@ export default props => {
               />
             </div>
           </fieldset>
-          <button
-            type="submit"
-            onClick={e => {
-              e.preventDefault();
-              constructNewOwner();
-            }}
-            className="btn btn-primary"
-          >
-            {editMode ? "Save Updates" : "Save New Owner"}
-          </button>
-          <button onClick={() => props.history.push("/owners")}>Previous</button>
+          <section className="ownerBtn">
+            <button
+              type="submit"
+              onClick={e => {
+                e.preventDefault();
+                constructNewOwner();
+              }}
+              className="ownerFormBtn"
+            >
+              {editMode ? "Save Updates" : "Save New Owner"}
+            </button>
+            <button className="ownerFormBtn" onClick={() => props.history.push("/owners")}>
+              Previous
+            </button>
+          </section>
         </form>
       </section>
     </>

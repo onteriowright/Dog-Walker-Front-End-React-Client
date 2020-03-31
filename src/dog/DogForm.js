@@ -64,7 +64,6 @@ export default props => {
           <h2 className="dogForm__title">{editMode ? "Update Dog" : "Add New Dog"}</h2>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="name">Name: </label>
               <input
                 type="text"
                 name="name"
@@ -81,7 +80,6 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="address">Breed: </label>
               <input
                 type="text"
                 name="breed"
@@ -97,7 +95,6 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="ownerId">Owner: </label>
               <select
                 name="ownerId"
                 ref={owner}
@@ -117,11 +114,12 @@ export default props => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="phone">Notes: </label>
               <textarea
                 name="notes"
                 ref={notes}
                 required
+                rows="3"
+                cols="30"
                 className="form-control"
                 proptype="varchar"
                 placeholder="Notes"
@@ -130,17 +128,21 @@ export default props => {
               ></textarea>
             </div>
           </fieldset>
-          <button
-            type="submit"
-            onClick={e => {
-              e.preventDefault();
-              constructNewDog();
-            }}
-            className="btn btn-primary"
-          >
-            {editMode ? "Save Updates" : "Save New Dog"}
-          </button>
-          <button onClick={() => props.history.push("/dogs")}>Previous</button>
+          <section className="dogBtn">
+            <button
+              type="submit"
+              onClick={e => {
+                e.preventDefault();
+                constructNewDog();
+              }}
+              className="dogFormBtn"
+            >
+              {editMode ? "Save Updates" : "Save New Dog"}
+            </button>
+            <button className="dogFormBtn" onClick={() => props.history.push("/dogs")}>
+              Previous
+            </button>
+          </section>
         </form>
       </section>
     </>

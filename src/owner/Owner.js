@@ -18,7 +18,11 @@ export default ({ owner, props }) => {
           </button>
           <button
             className="ownerIndividualBtn"
-            onClick={() => deleteOwner(owner).then(() => props.history.push("/owners"))}
+            onClick={() => {
+              if (window.confirm("Are you sure?")) {
+                deleteOwner(owner).then(() => props.history.push("/owners"));
+              }
+            }}
           >
             Delete
           </button>

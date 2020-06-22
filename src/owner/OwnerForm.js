@@ -9,7 +9,7 @@ export default props => {
 
   const ownerName = useRef(null);
   const address = useRef(null);
-  const neighborhood = useRef(null);
+  const neighborhood = useRef({}) || {};
   const phone = useRef(null);
 
   const editMode = props.match.params.hasOwnProperty("ownerId");

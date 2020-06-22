@@ -17,7 +17,11 @@ export default ({ neighborhood, props }) => {
           </button>
           <button
             className="neighborhoodIndividualBtn"
-            onClick={() => deleteNeighborhood(neighborhood).then(() => props.history.push("/neighborhoods"))}
+            onClick={() => {
+              if (window.confirm("Are you sure?")) {
+                deleteNeighborhood(neighborhood).then(() => props.history.push("/neighborhoods"));
+              }
+            }}
           >
             Delete
           </button>

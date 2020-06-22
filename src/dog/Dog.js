@@ -15,7 +15,14 @@ export default ({ dog, props }) => {
           <button className="dogIndividualBtn" onClick={() => props.history.push(`/dogs/edit/${dog.id}`)}>
             Edit
           </button>
-          <button className="dogIndividualBtn" onClick={() => deleteDog(dog).then(() => props.history.push("/dogs"))}>
+          <button
+            className="dogIndividualBtn"
+            onClick={() => {
+              if (window.confirm("Are you sure?")) {
+                deleteDog(dog).then(() => props.history.push("/dogs"));
+              }
+            }}
+          >
             Delete
           </button>
         </section>

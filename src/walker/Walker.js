@@ -15,7 +15,11 @@ export default ({ walker, props }) => {
           </button>
           <button
             className="walkerBtnIndividual"
-            onClick={() => deleteWalker(walker).then(() => props.history.push("/walkers"))}
+            onClick={() => {
+              if (window.confirm("Are you sure?")) {
+                deleteWalker(walker).then(() => props.history.push("/walkers"));
+              }
+            }}
           >
             Delete
           </button>

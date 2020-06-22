@@ -61,7 +61,7 @@ export default props => {
     <>
       <section className="dogForm--">
         <form className="dogForm">
-          <h2 className="dogForm__title">{editMode ? "Update Dog" : "Add New Dog"}</h2>
+          <h2 className="dogForm__title"> {editMode ? "Update Dog" : "Add New Dog"} </h2>{" "}
           <fieldset>
             <div className="form-group">
               <input
@@ -75,9 +75,9 @@ export default props => {
                 placeholder="Name"
                 defaultValue={dog.name}
                 onChange={handleControlledInputChange}
-              />
-            </div>
-          </fieldset>
+              />{" "}
+            </div>{" "}
+          </fieldset>{" "}
           <fieldset>
             <div className="form-group">
               <input
@@ -90,9 +90,9 @@ export default props => {
                 placeholder="Breed"
                 defaultValue={dog.breed}
                 onChange={handleControlledInputChange}
-              />
-            </div>
-          </fieldset>
+              />{" "}
+            </div>{" "}
+          </fieldset>{" "}
           <fieldset>
             <div className="form-group">
               <select
@@ -103,15 +103,16 @@ export default props => {
                 value={dog.ownerId}
                 onChange={handleControlledInputChange}
               >
-                <option value="0">Select a owner</option>
+                <option value="0"> Select a owner </option>{" "}
                 {owners.map(owner => (
                   <option key={owner.id} value={owner.id}>
-                    {owner.name}
+                    {" "}
+                    {owner.name}{" "}
                   </option>
-                ))}
-              </select>
-            </div>
-          </fieldset>
+                ))}{" "}
+              </select>{" "}
+            </div>{" "}
+          </fieldset>{" "}
           <fieldset>
             <div className="form-group">
               <textarea
@@ -125,9 +126,9 @@ export default props => {
                 placeholder="Notes"
                 defaultValue={dog.notes}
                 onChange={handleControlledInputChange}
-              ></textarea>
-            </div>
-          </fieldset>
+              ></textarea>{" "}
+            </div>{" "}
+          </fieldset>{" "}
           <section className="dogBtn">
             <button
               type="submit"
@@ -137,14 +138,14 @@ export default props => {
               }}
               className="dogFormBtn"
             >
-              {editMode ? "Save Updates" : "Save New Dog"}
-            </button>
+              {editMode ? "Save Updates" : "Save New Dog"}{" "}
+            </button>{" "}
             <button className="dogFormBtn" onClick={() => props.history.push("/dogs")}>
-              Previous
-            </button>
-          </section>
-        </form>
-      </section>
+              Previous{" "}
+            </button>{" "}
+          </section>{" "}
+        </form>{" "}
+      </section>{" "}
     </>
   );
 };
